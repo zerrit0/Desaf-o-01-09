@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow+Condensed:wght@400;600&display=swap');
+
+:root {
+  --azul-electrico: #CCCCCC;
+  --azul-profundo: #0a1440;
+  --negro: #0b0b12;
+  --dorado: #E60012;
+  --blanco-hueso: #f2f1ea;
+  --gris-azulado: #030305;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(160deg, var(--negro) 0%, var(--azul-profundo) 55%, var(--negro) 100%);
+  font-family: 'Barlow Condensed', sans-serif;
+  color: var(--blanco-hueso);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: rgba(10, 20, 64, 0.6);
+  border: 1px solid var(--gris-azulado);
+  border-left: 6px solid var(--dorado);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 92% 100%, 0 100%);
+  padding: 1.75rem 2rem 2rem;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.08), 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 4px;
+  background: var(--azul-electrico);
+}
+
+.card h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: var(--blanco-hueso);
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--azul-electrico);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+li {
+  position: relative;
+  background: rgba(28, 63, 214, 0.15);
+  border: 1px solid var(--azul-electrico);
+  padding: 0.55rem 1rem 0.55rem 1.4rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--dorado);
+}
+
+li span {
+  color: var(--blanco-hueso);
+}
+
+li:hover {
+  background: rgba(212, 175, 55, 0.12);
+  transform: translateX(4px);
+}
